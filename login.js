@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       signinBtn.innerHTML = '<span>Signing in...</span>';
 
       setTimeout(() => {
-        window.location.href = isAdmin ? '/admin-dashboard.html' : '/user-dashboard.html';
+        window.location.href = isAdmin ? './admin-dashboard.html' : './user-dashboard.html';
       }, 400);
     });
   }
