@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Register | STACKLY</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link
+        rel="stylesheet"
+        href="styles.css">
+
+</head>
+
+
+<body>
+
+<div class="login-page">
+
+
+    <!-- =====================================================
+         LEFT SIDE
+    ====================================================== -->
+
+    <section class="login-visual">
+
+        <div class="visual-glow"></div>
+
+
+        <!-- NETWORK -->
+
+        <div class="network">
+
+            <span class="network-line network-line-1"></span>
+            <span class="network-line network-line-2"></span>
+            <span class="network-line network-line-3"></span>
+            <span class="network-line network-line-4"></span>
+
+            <span class="network-node node-1"></span>
+            <span class="network-node node-2"></span>
+            <span class="network-node node-3"></span>
+            <span class="network-node node-4"></span>
+
+            <span class="network-center"></span>
+
+        </div>
+
+
+        <!-- LEFT CONTENT -->
+
+        <div class="visual-content">
+
+            <div class="visual-label">
+                STACKLY CAPITAL PARTNERS
+            </div>
+
+            <h2>
+                Access to the network, portfolio<br>
+                and intelligence behind every<br>
+                investment.
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RIGHT SIDE
+    ====================================================== -->
+
+    <section class="login-panel">
+
+        <div class="login-content">
+
+
+            <!-- LOGO -->
+
+            <a href="#" class="login-logo" style="display: flex; justify-content: space-between;">
+
+                    <img  class="logo-dark" src="./assets/logo-dark.webp" alt="Stackly logo" width="122" height="29">
+
+                    <p onclick="window.location.href='./index.html'">back to home</p>
+
+                </a>
+
+
+
+            <!-- HEADER -->
+
+            <div class="login-header">
+
+                <div class="login-label">
+                    PRIVATE INVESTOR PORTAL
+                </div>
+
+                <h1>
+                    Create your account.
+                </h1>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 REGISTER FORM
+            ================================================== -->
+
+            <form
+                id="registerForm"
+                class="contact-form-register"
+                novalidate>
+
+
+                <!-- NAME + EMAIL -->
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label for="name">
+                            NAME
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your full name"
+                            autocomplete="name">
+
+                        <span
+                            class="field-error"
+                            id="nameError">
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="email">
+                            WORK EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@company.com"
+                            autocomplete="email">
+
+                        <span
+                            class="field-error"
+                            id="emailError">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COMPANY + ROLE -->
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label for="company">
+                            COMPANY
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Company name"
+                            autocomplete="organization">
+
+                        <span
+                            class="field-error"
+                            id="companyError">
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="role">
+                            ROLE
+                        </label>
+
+                        <select
+                            id="role"
+                            name="role">
+
+                            <option value="">
+                                Select your role
+                            </option>
+
+                            <option value="founder">
+                                Founder
+                            </option>
+
+                            <option value="co-founder">
+                                Co-Founder
+                            </option>
+
+                            <option value="ceo">
+                                CEO
+                            </option>
+
+                            <option value="cto">
+                                CTO
+                            </option>
+
+                            <option value="investor">
+                                Investor
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <span
+                            class="field-error"
+                            id="roleError">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD + CONFIRM PASSWORD -->
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label for="password">
+                            PASSWORD
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create password"
+                            autocomplete="new-password">
+
+                        <span
+                            class="field-error"
+                            id="passwordError">
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="confirmPassword">
+                            CONFIRM PASSWORD
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm password"
+                            autocomplete="new-password">
+
+                        <span
+                            class="field-error"
+                            id="confirmPasswordError">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <div class="form-submit">
+
+                    <button
+                        type="submit"
+                        class="conversation-btn"
+                        id="registerBtn">
+
+                        <span>
+                            Create Account
+                        </span>
+
+                        <i>↗</i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="formMessage"
+                    class="form-message">
+                </div>
+
+            </form>
+
+
+
+            <!-- LOGIN -->
+
+            <div class="request-access">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="./login.html">
+                    Sign in →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | STACKLY</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <section class="login-visual">
+
+            <!-- Decorative glow -->
+            <div class="visual-glow"></div>
+
+
+            <!-- Network graphic -->
+
+            <div class="network">
+
+    <span class="network-line network-line-1"></span>
+    <span class="network-line network-line-2"></span>
+    <span class="network-line network-line-3"></span>
+    <span class="network-line network-line-4"></span>
+
+    <span class="network-node node-1"></span>
+    <span class="network-node node-2"></span>
+    <span class="network-node node-3"></span>
+    <span class="network-node node-4"></span>
+
+    <span class="network-center"></span>
+
+</div>
+
+
+            <!-- Left bottom content -->
+
+            <div class="visual-content">
+
+                <div class="visual-label">
+                    STACKLY CAPITAL PARTNERS
+                </div>
+
+                <h2>
+                    Access to the network, portfolio<br>
+                    and intelligence behind every<br>
+                    investment.
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SIDE
+        ================================================== -->
+
+        <section class="login-panel">
+
+            <div class="login-content">
+
+
+                <!-- Logo -->
+
+                <a href="#" class="login-logo" style="display: flex; justify-content: space-between;">
+
+                    <img  class="logo-dark" src="./assets/logo-dark.webp" alt="Stackly logo" width="122" height="29">
+
+                    <p onclick="window.location.href='./index.html'">back to home</p>
+
+                </a>
+
+
+
+                <!-- Header -->
+
+                <div class="login-header">
+
+                    <div class="login-label">
+                        PRIVATE INVESTOR PORTAL
+                    </div>
+
+                    <h1>
+                        Sign in to your account.
+                    </h1>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form
+                    id="loginForm"
+                    class="login-form"
+                    novalidate>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            EMAIL
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@firm.com"
+                            autocomplete="email"
+                        >
+
+                        <div
+                            class="field-error"
+                            id="emailError">
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ROLE -->
+
+                    <div class="form-field">
+
+                            <label for="stage">
+                                ROle
+                            </label>
+
+                            <select
+                                id="role"
+                                name="role">
+
+                                <option value="admin">
+                                   ADMIN
+                                </option>
+
+                                <option value="user">
+                                    USER
+                                </option>
+
+
+                            </select>
+
+                        </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group password-group">
+
+                        <label for="password">
+                            PASSWORD
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="••••••••••••"
+                                autocomplete="current-password"
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password">
+                                ◉
+                            </button>
+
+                        </div>
+
+                        <div
+                            class="field-error"
+                            id="passwordError">
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+
+                        <a
+                            href="#"
+                            class="forgot-link"
+                            id="forgotPassword">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="signin-btn"
+                        id="signinBtn">
+
+                        <span>
+                            Sign In
+                        </span>
+
+                        <span class="button-icon">
+                            ↗
+                        </span>
+
+                    </button>
+
+
+                    <!-- GENERAL ERROR -->
+
+                    <div
+                        class="login-message"
+                        id="loginMessage">
+                    </div>
+
+                </form>
+
+
+
+                <!-- ACCESS -->
+
+                <div class="request-access">
+
+                    <span>
+                        Not yet a partner?
+                    </span>
+
+                    <a href="./register.html">
+                        Register ? →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>

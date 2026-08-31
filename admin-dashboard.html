@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STACKLY — Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+<div class="dash-page">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <a href="/index.html"><img src="./assets/logo-dark.webp" alt="Stackly" /></a>
+      <span class="role-badge admin">Admin</span>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Dashboard</div>
+      <a class="sidebar-link active" data-tab="overview"><span class="icon"><i class="fa-solid fa-chart-pie"></i></span> Overview</a>
+      <a class="sidebar-link" data-tab="analytics"><span class="icon"><i class="fa-solid fa-chart-line"></i></span> Analytics</a>
+      <div class="sidebar-section-label">Management</div>
+      <a class="sidebar-link" data-tab="users"><span class="icon"><i class="fa-solid fa-users"></i></span> Users</a>
+      <a class="sidebar-link" data-tab="investments"><span class="icon"><i class="fa-solid fa-briefcase"></i></span> Investments</a>
+      <a class="sidebar-link" data-tab="companies"><span class="icon"><i class="fa-solid fa-building"></i></span> Companies</a>
+      <div class="sidebar-section-label">System</div>
+      <a class="sidebar-link" data-tab="settings"><span class="icon"><i class="fa-solid fa-gear"></i></span> Settings</a>
+      <a class="sidebar-link" data-tab="logs"><span class="icon"><i class="fa-solid fa-clipboard-list"></i></span> Audit Logs</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-info">
+        <div class="sidebar-avatar admin-avatar" id="userAvatar">A</div>
+        <div>
+          <div class="sidebar-user-name" id="userName">Admin</div>
+          <div class="sidebar-user-email" id="userEmail">admin@stackly.com</div>
+        </div>
+      </div>
+      <button class="logout-btn" id="logoutBtn"><span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span> Sign Out</button>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <button class="mobile-menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+
+    <!-- ═══════════ OVERVIEW ═══════════ -->
+    <section class="dash-tab active" data-tab="overview">
+      <div class="dash-header">
+        <div><h1>Admin Dashboard</h1><p class="welcome-text">Manage your platform, users, and investments.</p></div>
+        <div class="dash-header-actions"><a class="btn btn-ghost" href="/index.html"><i class="fa-solid fa-arrow-left"></i> Home</a></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Total AUM</div><div class="stat-value">$2.8B+</div><div class="stat-change">+18.2% YTD</div></div>
+        <div class="stat-card"><div class="stat-label">Active Users</div><div class="stat-value">1,247</div><div class="stat-change">+124 this month</div></div>
+        <div class="stat-card"><div class="stat-label">Portfolio Companies</div><div class="stat-value">74</div><div class="stat-change">6 new this year</div></div>
+        <div class="stat-card"><div class="stat-label">Unicorns</div><div class="stat-value">18</div><div class="stat-change">+3 since Q1</div></div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title">Quick Actions</h3>
+        <div class="quick-actions">
+          <div class="action-card" onclick="switchTab('users')"><div class="action-icon"><i class="fa-solid fa-user-plus"></i></div><div class="action-title">Add New User</div><div class="action-desc">Register a new investor or team member</div></div>
+          <div class="action-card" onclick="switchTab('investments')"><div class="action-icon"><i class="fa-solid fa-money-bill-trend-up"></i></div><div class="action-title">New Investment</div><div class="action-desc">Record a new portfolio investment</div></div>
+          <div class="action-card" onclick="switchTab('analytics')"><div class="action-icon"><i class="fa-solid fa-file-lines"></i></div><div class="action-title">Generate Report</div><div class="action-desc">Create quarterly performance reports</div></div>
+          <div class="action-card" onclick="switchTab('settings')"><div class="action-icon"><i class="fa-solid fa-bell"></i></div><div class="action-title">Send Notification</div><div class="action-desc">Broadcast updates to all users</div></div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <h3 class="section-title">Recent Users</h3>
+          <div class="portfolio-item"><div class="portfolio-item-left"><div class="user-cell-avatar">M</div><div><div class="portfolio-name">Maya Chen</div><div class="portfolio-sector">maya@nova.io — 3 investments</div></div></div><span class="status-badge active">Active</span></div>
+          <div class="portfolio-item"><div class="portfolio-item-left"><div class="user-cell-avatar">D</div><div><div class="portfolio-name">Dinesh Raj</div><div class="portfolio-sector">dinesh@kora.com — 2 investments</div></div></div><span class="status-badge active">Active</span></div>
+          <div class="portfolio-item"><div class="portfolio-item-left"><div class="user-cell-avatar">S</div><div><div class="portfolio-name">Sarah Kim</div><div class="portfolio-sector">sarah@stackly.com — Admin</div></div></div><span class="status-badge active">Active</span></div>
+          <div class="portfolio-item"><div class="portfolio-item-left"><div class="user-cell-avatar">R</div><div><div class="portfolio-name">Raj Patel</div><div class="portfolio-sector">raj@orbit.eco — 1 investment</div></div></div><span class="status-badge inactive">Inactive</span></div>
+        </div>
+        <div class="dash-card">
+          <h3 class="section-title">System Activity</h3>
+          <div class="activity-item"><div class="activity-dot green"></div><div><div class="activity-text"><strong>New user:</strong> raj@orbit.eco joined as Investor</div><div class="activity-time">30 min ago</div></div></div>
+          <div class="activity-item"><div class="activity-dot gold"></div><div><div class="activity-text"><strong>Investment:</strong> $20K seed round for MIRA confirmed</div><div class="activity-time">2 hours ago</div></div></div>
+          <div class="activity-item"><div class="activity-dot blue"></div><div><div class="activity-text"><strong>Report:</strong> Q3 2026 Performance Report generated</div><div class="activity-time">5 hours ago</div></div></div>
+          <div class="activity-item"><div class="activity-dot red"></div><div><div class="activity-text"><strong>Alert:</strong> VANTA valuation dropped 3.2%</div><div class="activity-time">1 day ago</div></div></div>
+          <div class="activity-item"><div class="activity-dot green"></div><div><div class="activity-text"><strong>Milestone:</strong> KORA reached $50M ARR</div><div class="activity-time">2 days ago</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ANALYTICS ═══════════ -->
+    <section class="dash-tab" data-tab="analytics">
+      <div class="dash-header"><div><h1>Analytics</h1><p class="welcome-text">Platform performance metrics and insights.</p></div></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Revenue (Q3)</div><div class="stat-value">$4.2M</div><div class="stat-change">+22% vs Q2</div></div>
+        <div class="stat-card"><div class="stat-label">New Users (Month)</div><div class="stat-value">124</div><div class="stat-change">+18% vs last month</div></div>
+        <div class="stat-card"><div class="stat-label">Retention Rate</div><div class="stat-value">94.2%</div><div class="stat-change">+1.3% improvement</div></div>
+        <div class="stat-card"><div class="stat-label">Avg. Investment</div><div class="stat-value">$196K</div><div class="stat-change">+8% YoY</div></div>
+      </div>
+      <div class="charts-section">
+        <div class="chart-card"><h3>Investment Distribution by Sector</h3><div class="chart-placeholder"><div style="text-align:center"><div style="font-size:32px;margin-bottom:8px"><i class="fa-solid fa-chart-pie"></i></div><div>Sector Allocation</div><div style="margin-top:14px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><span style="font-size:11px;color:var(--muted)"><i class="fa-solid fa-circle" style="font-size:8px"></i> AI 35%</span><span style="font-size:11px;color:var(--muted)"><i class="fa-solid fa-circle" style="font-size:8px"></i> Fintech 25%</span><span style="font-size:11px;color:var(--muted)"><i class="fa-solid fa-circle" style="font-size:8px"></i> Climate 20%</span><span style="font-size:11px;color:var(--muted)"><i class="fa-solid fa-circle" style="font-size:8px"></i> Health 12%</span><span style="font-size:11px;color:var(--muted)"><i class="fa-solid fa-circle" style="font-size:8px"></i> Other 8%</span></div></div></div></div>
+        <div class="chart-card"><h3>Revenue Growth (Quarterly)</h3><div class="chart-placeholder"><div style="text-align:center"><div style="font-size:32px;margin-bottom:8px"><i class="fa-solid fa-chart-line"></i></div><div style="margin-top:12px;display:flex;gap:10px;align-items:flex-end;justify-content:center;height:100px"><div style="text-align:center"><div style="width:32px;height:30px;background:var(--gold);border-radius:3px 3px 0 0;opacity:0.4"></div><div style="font-size:9px;color:var(--muted);margin-top:4px">Q4</div></div><div style="text-align:center"><div style="width:32px;height:50px;background:var(--gold);border-radius:3px 3px 0 0;opacity:0.55"></div><div style="font-size:9px;color:var(--muted);margin-top:4px">Q1</div></div><div style="text-align:center"><div style="width:32px;height:65px;background:var(--gold);border-radius:3px 3px 0 0;opacity:0.7"></div><div style="font-size:9px;color:var(--muted);margin-top:4px">Q2</div></div><div style="text-align:center"><div style="width:32px;height:85px;background:var(--gold);border-radius:3px 3px 0 0;opacity:0.9"></div><div style="font-size:9px;color:var(--muted);margin-top:4px">Q3</div></div></div></div></div></div>
+      </div>
+      <div class="dash-grid">
+        <div class="dash-card"><h3 class="section-title">User Growth</h3><div class="chart-placeholder" style="height:160px"><div style="text-align:center"><div style="font-size:28px;margin-bottom:6px"><i class="fa-solid fa-users"></i></div><div style="margin-top:10px;display:flex;gap:6px;align-items:flex-end;justify-content:center;height:60px"><div style="width:20px;height:25px;background:#5bc0de;border-radius:2px 2px 0 0;opacity:0.4"></div><div style="width:20px;height:35px;background:#5bc0de;border-radius:2px 2px 0 0;opacity:0.5"></div><div style="width:20px;height:42px;background:#5bc0de;border-radius:2px 2px 0 0;opacity:0.6"></div><div style="width:20px;height:50px;background:#5bc0de;border-radius:2px 2px 0 0;opacity:0.7"></div><div style="width:20px;height:60px;background:#5bc0de;border-radius:2px 2px 0 0;opacity:0.9"></div></div><div style="font-size:10px;color:var(--muted);margin-top:8px">1,023 <i class="fa-solid fa-arrow-right"></i> 1,247 users (6 months)</div></div></div></div>
+        <div class="dash-card"><h3 class="section-title">Top Performing Companies</h3><div class="portfolio-item"><div class="portfolio-item-left"><div class="portfolio-icon nova">N</div><div><div class="portfolio-name">NOVA</div><div class="portfolio-sector">AI Infrastructure</div></div></div><div class="portfolio-item-right"><div class="portfolio-roi positive">+42.5%</div></div></div><div class="portfolio-item"><div class="portfolio-item-left"><div class="portfolio-icon kora">K</div><div><div class="portfolio-name">KORA</div><div class="portfolio-sector">Financial Infrastructure</div></div></div><div class="portfolio-item-right"><div class="portfolio-roi positive">+28.1%</div></div></div><div class="portfolio-item"><div class="portfolio-item-left"><div class="portfolio-icon orbit">O</div><div><div class="portfolio-name">ORBIT</div><div class="portfolio-sector">Climate Intelligence</div></div></div><div class="portfolio-item-right"><div class="portfolio-roi positive">+18.7%</div></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ USERS ═══════════ -->
+    <section class="dash-tab" data-tab="users">
+      <div class="dash-header"><div><h1>User Management</h1><p class="welcome-text">Manage investors and team members on the platform.</p></div></div>
+      <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="stat-card"><div class="stat-label">Total Users</div><div class="stat-value">1,247</div></div>
+        <div class="stat-card"><div class="stat-label">Active Investors</div><div class="stat-value">892</div></div>
+        <div class="stat-card"><div class="stat-label">Team Members</div><div class="stat-value">24</div></div>
+      </div>
+      <div class="section-block">
+        <h3 class="section-title">Add New User</h3>
+        <div class="form-card">
+          <div class="form-group"><label>Full Name</label><input type="text" placeholder="Enter full name" /></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="user@example.com" /></div>
+          <div class="form-group"><label>Role</label><select><option>Investor (User)</option><option>Team Member (Admin)</option></select></div>
+          <div class="form-group"><label>Initial Password</label><input type="password" placeholder="Set initial password" /></div>
+          <div class="form-actions"><button class="btn btn-gold">Create User</button></div>
+        </div>
+      </div>
+      <div class="section-block">
+        <h3 class="section-title">All Users</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>User</th><th>Role</th><th>Investments</th><th>Total Value</th><th>Joined</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><div class="user-cell"><div class="user-cell-avatar">M</div><div><div>Maya Chen</div><div style="font-size:11px;color:var(--muted)">maya@nova.io</div></div></div></td><td><span class="role-badge-sm user">User</span></td><td>3</td><td>$125,000</td><td>Jan 2024</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><div class="user-cell"><div class="user-cell-avatar">D</div><div><div>Dinesh Raj</div><div style="font-size:11px;color:var(--muted)">dinesh@kora.com</div></div></div></td><td><span class="role-badge-sm user">User</span></td><td>2</td><td>$89,000</td><td>Mar 2023</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><div class="user-cell"><div class="user-cell-avatar">S</div><div><div>Sarah Kim</div><div style="font-size:11px;color:var(--muted)">sarah@stackly.com</div></div></div></td><td><span class="role-badge-sm admin">Admin</span></td><td>—</td><td>—</td><td>Nov 2021</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><div class="user-cell"><div class="user-cell-avatar">R</div><div><div>Raj Patel</div><div style="font-size:11px;color:var(--muted)">raj@orbit.eco</div></div></div></td><td><span class="role-badge-sm user">User</span></td><td>1</td><td>$45,000</td><td>Jul 2024</td><td><span class="status-badge inactive">Inactive</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ INVESTMENTS ═══════════ -->
+    <section class="dash-tab" data-tab="investments">
+      <div class="dash-header"><div><h1>Investments</h1><p class="welcome-text">Track and manage all platform investments.</p></div></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Total Deployed</div><div class="stat-value">$2.8B+</div></div>
+        <div class="stat-card"><div class="stat-label">Active Rounds</div><div class="stat-value">23</div></div>
+        <div class="stat-card"><div class="stat-label">Avg. ROI</div><div class="stat-value">9.4×</div></div>
+        <div class="stat-card"><div class="stat-label">This Quarter</div><div class="stat-value">$180M</div></div>
+      </div>
+      <div class="section-block">
+        <h3 class="section-title">Record New Investment</h3>
+        <div class="form-card">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div class="form-group"><label>Company</label><input type="text" placeholder="Company name" /></div>
+            <div class="form-group"><label>Sector</label><select><option>AI Infrastructure</option><option>Fintech</option><option>Climate Tech</option><option>Healthcare</option><option>Enterprise</option></select></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div class="form-group"><label>Round</label><select><option>Seed</option><option>Series A</option><option>Series B</option><option>Series C</option></select></div>
+            <div class="form-group"><label>Amount</label><input type="text" placeholder="$0" /></div>
+          </div>
+          <div class="form-group"><label>Notes</label><textarea placeholder="Additional details about this investment..."></textarea></div>
+          <div class="form-actions"><button class="btn btn-gold">Record Investment</button></div>
+        </div>
+      </div>
+      <div class="section-block">
+        <h3 class="section-title">All Investments</h3>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Company</th><th>Sector</th><th>Round</th><th>Amount</th><th>Date</th><th>Valuation</th><th>ROI</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><strong>NOVA</strong></td><td>AI Infrastructure</td><td>Series B</td><td>$420M</td><td>Mar 2024</td><td>$1.8B</td><td style="color:#6c6">+42.5%</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><strong>KORA</strong></td><td>Financial Infrastructure</td><td>Series A</td><td>$180M</td><td>Jun 2023</td><td>$520M</td><td style="color:#6c6">+28.1%</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><strong>ORBIT</strong></td><td>Climate Intelligence</td><td>Seed</td><td>$35M</td><td>Jan 2024</td><td>$85M</td><td style="color:#6c6">+18.7%</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><strong>VANTA</strong></td><td>Enterprise Intelligence</td><td>Series C</td><td>$95M</td><td>Sep 2022</td><td>$420M</td><td style="color:#e88">-3.2%</td><td><span class="status-badge active">Active</span></td></tr>
+              <tr><td><strong>MIRA</strong></td><td>Future Commerce</td><td>Seed</td><td>$20M</td><td>Jul 2025</td><td>$28M</td><td style="color:#6c6">+8.4%</td><td><span class="status-badge pending">Pending</span></td></tr>
+              <tr><td><strong>LUMA</strong></td><td>Healthcare Technology</td><td>Series A</td><td>$65M</td><td>Apr 2023</td><td>$210M</td><td style="color:#6c6">+15.2%</td><td><span class="status-badge active">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ COMPANIES ═══════════ -->
+    <section class="dash-tab" data-tab="companies">
+      <div class="dash-header"><div><h1>Portfolio Companies</h1><p class="welcome-text">Overview of all companies in the Stackly portfolio.</p></div></div>
+      <div class="investments-grid">
+        <div class="investment-card"><div class="inv-header"><div class="inv-name">NOVA</div><div class="inv-round">Series B</div></div><div class="inv-sector">AI Infrastructure — Chennai</div><div class="inv-stats"><div class="inv-stat"><div class="inv-stat-value">$420M</div><div class="inv-stat-label">Valuation</div></div><div class="inv-stat"><div class="inv-stat-value">186</div><div class="inv-stat-label">Employees</div></div><div class="inv-stat"><div class="inv-stat-value">+42.5%</div><div class="inv-stat-label">ROI</div></div></div></div>
+        <div class="investment-card"><div class="inv-header"><div class="inv-name">KORA</div><div class="inv-round">Series A</div></div><div class="inv-sector">Financial Infrastructure — Bangalore</div><div class="inv-stats"><div class="inv-stat"><div class="inv-stat-value">$180M</div><div class="inv-stat-label">Valuation</div></div><div class="inv-stat"><div class="inv-stat-value">94</div><div class="inv-stat-label">Employees</div></div><div class="inv-stat"><div class="inv-stat-value">+28.1%</div><div class="inv-stat-label">ROI</div></div></div></div>
+        <div class="investment-card"><div class="inv-header"><div class="inv-name">ORBIT</div><div class="inv-round">Seed</div></div><div class="inv-sector">Climate Intelligence — Hyderabad</div><div class="inv-stats"><div class="inv-stat"><div class="inv-stat-value">$35M</div><div class="inv-stat-label">Valuation</div></div><div class="inv-stat"><div class="inv-stat-value">32</div><div class="inv-stat-label">Employees</div></div><div class="inv-stat"><div class="inv-stat-value">+18.7%</div><div class="inv-stat-label">ROI</div></div></div></div>
+        <div class="investment-card"><div class="inv-header"><div class="inv-name">VANTA</div><div class="inv-round">Series C</div></div><div class="inv-sector">Enterprise Intelligence — Bangalore</div><div class="inv-stats"><div class="inv-stat"><div class="inv-stat-value">$420M</div><div class="inv-stat-label">Valuation</div></div><div class="inv-stat"><div class="inv-stat-value">210</div><div class="inv-stat-label">Employees</div></div><div class="inv-stat"><div class="inv-stat-value">-3.2%</div><div class="inv-stat-label">ROI</div></div></div></div>
+        <div class="investment-card"><div class="inv-header"><div class="inv-name">MIRA</div><div class="inv-round">Seed</div></div><div class="inv-sector">Future Commerce — Chennai</div><div class="inv-stats"><div class="inv-stat"><div class="inv-stat-value">$28M</div><div class="inv-stat-label">Valuation</div></div><div class="inv-stat"><div class="inv-stat-value">18</div><div class="inv-stat-label">Employees</div></div><div class="inv-stat"><div class="inv-stat-value">+8.4%</div><div class="inv-stat-label">ROI</div></div></div></div>
+        <div class="investment-card"><div class="inv-header"><div class="inv-name">LUMA</div><div class="inv-round">Series A</div></div><div class="inv-sector">Healthcare Technology — Hyderabad</div><div class="inv-stats"><div class="inv-stat"><div class="inv-stat-value">$210M</div><div class="inv-stat-label">Valuation</div></div><div class="inv-stat"><div class="inv-stat-value">78</div><div class="inv-stat-label">Employees</div></div><div class="inv-stat"><div class="inv-stat-value">+15.2%</div><div class="inv-stat-label">ROI</div></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SETTINGS ═══════════ -->
+    <section class="dash-tab" data-tab="settings">
+      <div class="dash-header"><div><h1>Settings</h1><p class="welcome-text">Platform configuration and system preferences.</p></div></div>
+      <div class="settings-grid">
+        <div class="setting-group"><h3>General Settings</h3>
+          <div class="setting-row"><div><div class="setting-label">Platform Name</div><div class="setting-desc">Stackly Capital Partners</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">Maintenance Mode</div><div class="setting-desc">Temporarily disable public access</div></div><div class="toggle-switch"></div></div>
+          <div class="setting-row"><div><div class="setting-label">New Registrations</div><div class="setting-desc">Allow new user signups</div></div><div class="toggle-switch active"></div></div>
+        </div>
+        <div class="setting-group"><h3>Notification Settings</h3>
+          <div class="setting-row"><div><div class="setting-label">Email Alerts</div><div class="setting-desc">Send email notifications to users</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">Investment Alerts</div><div class="setting-desc">Notify users about portfolio changes</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">Weekly Digest</div><div class="setting-desc">Send weekly summary emails</div></div><div class="toggle-switch active"></div></div>
+        </div>
+        <div class="setting-group"><h3>Security</h3>
+          <div class="setting-row"><div><div class="setting-label">Two-Factor Authentication</div><div class="setting-desc">Require 2FA for admin accounts</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">Session Timeout</div><div class="setting-desc">Auto logout after 30 minutes of inactivity</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">IP Whitelisting</div><div class="setting-desc">Restrict admin access to specific IPs</div></div><div class="toggle-switch"></div></div>
+        </div>
+        <div class="setting-group"><h3>Data & Privacy</h3>
+          <div class="setting-row"><div><div class="setting-label">Data Encryption</div><div class="setting-desc">AES-256 encryption at rest</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">Audit Logging</div><div class="setting-desc">Log all admin actions</div></div><div class="toggle-switch active"></div></div>
+          <div class="setting-row"><div><div class="setting-label">Auto Backups</div><div class="setting-desc">Daily automated backups</div></div><div class="toggle-switch active"></div></div>
+        </div>
+      </div>
+      <div style="margin-top:20px"><button class="btn btn-gold">Save All Settings</button></div>
+    </section>
+
+    <!-- ═══════════ AUDIT LOGS ═══════════ -->
+    <section class="dash-tab" data-tab="logs">
+      <div class="dash-header"><div><h1>Audit Logs</h1><p class="welcome-text">Track all system and user actions for security and compliance.</p></div></div>
+      <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="stat-card"><div class="stat-label">Today's Actions</div><div class="stat-value">47</div></div>
+        <div class="stat-card"><div class="stat-label">This Week</div><div class="stat-value">312</div></div>
+        <div class="stat-card"><div class="stat-label">Security Alerts</div><div class="stat-value">2</div></div>
+      </div>
+      <div class="section-block">
+        <h3 class="section-title">Recent Activity</h3>
+        <div class="log-list">
+          <div class="log-item"><div class="log-icon green"><i class="fa-solid fa-user"></i></div><div class="log-content"><div class="log-action"><strong>New user registered:</strong> raj@orbit.eco joined as Investor</div><div class="log-meta">IP: 103.45.67.89 · Browser: Chrome 120 · Location: Mumbai, India</div></div><div class="log-time">30 min ago</div></div>
+          <div class="log-item"><div class="log-icon gold"><i class="fa-solid fa-money-bill"></i></div><div class="log-content"><div class="log-action"><strong>Investment confirmed:</strong> $20K seed round for MIRA by admin@stackly.com</div><div class="log-meta">IP: 172.16.0.1 · Browser: Chrome 120 · Session: Admin Portal</div></div><div class="log-time">2 hours ago</div></div>
+          <div class="log-item"><div class="log-icon blue"><i class="fa-solid fa-file-lines"></i></div><div class="log-content"><div class="log-action"><strong>Report generated:</strong> Q3 2026 Performance Report downloaded</div><div class="log-meta">IP: 103.45.67.92 · Browser: Firefox 121 · Format: PDF</div></div><div class="log-time">5 hours ago</div></div>
+          <div class="log-item"><div class="log-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div><div class="log-content"><div class="log-action"><strong>Valuation alert:</strong> VANTA dropped 3.2% — threshold exceeded</div><div class="log-meta">System auto-alert · Triggered by daily valuation check</div></div><div class="log-time">1 day ago</div></div>
+          <div class="log-item"><div class="log-icon green"><i class="fa-solid fa-key"></i></div><div class="log-content"><div class="log-action"><strong>Password changed:</strong> sarah@stackly.com updated credentials</div><div class="log-meta">IP: 192.168.1.100 · Browser: Safari 17 · 2FA verified</div></div><div class="log-time">1 day ago</div></div>
+          <div class="log-item"><div class="log-icon gold"><i class="fa-solid fa-gear"></i></div><div class="log-content"><div class="log-action"><strong>Settings updated:</strong> Email notification preferences changed</div><div class="log-meta">Admin: admin@stackly.com · IP: 172.16.0.1</div></div><div class="log-time">2 days ago</div></div>
+          <div class="log-item"><div class="log-icon red"><i class="fa-solid fa-ban"></i></div><div class="log-content"><div class="log-action"><strong>Failed login:</strong> 3 consecutive failed attempts from unknown IP</div><div class="log-meta">IP: 45.33.22.11 · Account: admin@stackly.com · Blocked after 5 attempts</div></div><div class="log-time">4 days ago</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/dashboard.js"></script>
+<script>initDashboard('admin');</script>
+</body>
+</html>

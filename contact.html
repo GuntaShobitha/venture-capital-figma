@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | STACKLY</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- ================= NAVBAR ================= -->
+   <header class="nav-wrap">
+      <nav class="nav">
+        <a class="logo" href="#top">
+<img
+  src="./assets/logo-dark.webp"
+  class="logo-dark"
+  alt="Stackly logo"
+  width="122"
+  height="29"
+/>        </a>
+        <ul class="nav-links">
+          <li><a  href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="/login.html">Login</a>
+    <a href="404.html" class="btn btn-gold">Pitch Your Company <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <main class="contact-page">
+
+    <!-- =====================================================
+         CONTACT HERO
+    ====================================================== -->
+
+    <section class="contact-hero">
+
+        <div class="contact-container">
+
+            <div class="contact-label">
+                <span>—</span>
+                CONTACT STACKLY
+            </div>
+
+            <h1>
+                Let's talk about what you're<br>
+                building.
+            </h1>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT AREA
+    ====================================================== -->
+
+    <section class="contact-area">
+
+        <div class="contact-container contact-layout">
+
+
+            <!-- =================================================
+                 OFFICES
+            ================================================== -->
+
+            <aside class="offices">
+
+                <div class="small-label">
+                    OFFICES
+                </div>
+
+                <div class="office-list">
+
+                    <button
+                        type="button"
+                        class="office-item active"
+                        data-office="Bangalore">
+                        Bangalore
+                    </button>
+
+                    <button
+                        type="button"
+                        class="office-item"
+                        data-office="Chennai">
+                        Chennai
+                    </button>
+
+                    <button
+                        type="button"
+                        class="office-item"
+                        data-office="Hyderabad">
+                        Hyderabad
+                    </button>
+
+                    <button
+                        type="button"
+                        class="office-item"
+                        data-office="Vizag">
+                        Vizag
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 CONTACT FORM
+            ================================================== -->
+
+            <div class="contact-form-wrapper">
+
+                <form id="contactForm" class="contact-form">
+
+
+                    <!-- NAME + EMAIL -->
+
+                    <div class="form-row">
+
+                        <div class="form-field">
+
+                            <label for="name">
+                                NAME
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="email">
+                                WORK EMAIL
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@company.com"
+                                autocomplete="email"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- COMPANY + STAGE -->
+
+                    <div class="form-row">
+
+                        <div class="form-field">
+
+                            <label for="company">
+                                COMPANY
+                            </label>
+
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                placeholder="Company name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="stage">
+                                COMPANY STAGE
+                            </label>
+
+                            <select
+                                id="stage"
+                                name="stage">
+
+                                <option value="">
+                                    Pre-seed
+                                </option>
+
+                                <option value="pre-seed">
+                                    Pre-seed
+                                </option>
+
+                                <option value="seed">
+                                    Seed
+                                </option>
+
+                                <option value="series-a">
+                                    Series A
+                                </option>
+
+                                <option value="series-b">
+                                    Series B
+                                </option>
+
+                                <option value="growth">
+                                    Growth
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INVESTMENT AREA -->
+
+                    <div class="form-field full-field">
+
+                        <label for="investment">
+                            INVESTMENT AREA
+                        </label>
+
+                        <input
+                            type="text"
+                            id="investment"
+                            name="investment"
+                            value="AI & Intelligent Systems"
+                        >
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="form-field message-field">
+
+                        <label for="message">
+                            MESSAGE
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us what you're building"></textarea>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <div class="form-submit">
+
+                        <button
+                            type="submit"
+                            class="conversation-btn">
+
+                            <span>
+                                Start the Conversation
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- SUCCESS MESSAGE -->
+
+                    <div
+                        id="formMessage"
+                        class="form-message">
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAP
+    ====================================================== -->
+
+    <!-- =====================================================
+     REAL MAP
+====================================================== -->
+
+<section class="map-section">
+
+    <!-- Address bar -->
+    <div class="map-address">
+        10, Begur - Koppa Rd, Suraksha Nagar,
+        Yelenahalli, Akshayanagar,
+        Bengaluru, Karnataka 560114, India
+    </div>
+
+    <!-- Real Google Map -->
+    <div class="map-container">
+
+        <iframe
+            src="https://www.google.com/maps?q=10%20Begur%20Koppa%20Rd%2C%20Suraksha%20Nagar%2C%20Yelenahalli%2C%20Akshayanagar%2C%20Bengaluru%2C%20Karnataka%20560114&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =====================================================
+         PITCH CTA
+    ====================================================== -->
+
+  <section class="cta" id="cta">
+      <div class="wrap center-col">
+        <p class="label">— PITCH — YOUR COMPANY</p>
+        <h2 class="display center big">Tell us what you're building</h2>
+        <p class="lede center">Tell us what you're building, why now, and why you're the team to build it.</p>
+        <div class="hero-cta center-cta">
+    <a href="404.html" class="btn btn-gold">Submit Your Pitch<span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+      <div class="wrap footer-grid">
+        <div>  <a class="logo" href="#top">
+          <img src="./assets/logo-dark.webp" class="logo-dark" alt="Stackly logo" width="122" height="29" />
+        </a> <p  style="margin-top: 1rem; max-width: 34ch; font-size: 10px; margin-left: 20px;">
+              Conviction capital for founders building the infrastructure of the next decade.
+            </p></div>
+        <div>
+          <p class="label">Firm</p>
+          <ul><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+        </div>
+        <div>
+          <p class="label">Resources</p>
+          <ul><li><a href="services.html">Insights</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Pitch Your Company</a></li></ul>
+        </div>
+        <div>
+          <p class="label">Offices</p>
+          <ul><li>Chennai</li><li>Banglore</li><li>Hyderabad</li></ul>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p>© 2026 Stackly Capital Partners. All rights reserved.</p>
+        <a href="#cta">Private Investor Portal <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </footer>
+
+
+</div>
+
+
+<style>
+        .form-field .error-msg {
+            display: none;
+            color: #e74c3c;
+            font-size: 11px;
+            margin-top: 4px;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .form-field.has-error input,
+        .form-field.has-error select,
+        .form-field.has-error textarea {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 1px #e74c3c;
+        }
+        .form-field.has-error .error-msg {
+            display: block;
+        }
+    </style>
+
+    <script>
+    document.getElementById('hamburgerBtn').addEventListener('click', function() {
+      var links = document.querySelector('.nav-links');
+      var actions = document.querySelector('.nav-actions');
+      links.classList.toggle('show');
+      if (links.classList.contains('show')) {
+        actions.style.top = links.offsetHeight + 'px';
+        actions.classList.add('show');
+      } else {
+        actions.classList.remove('show');
+      }
+    });
+
+    /* ===== Contact Form Validation ===== */
+    (function () {
+      var form = document.getElementById('contactForm');
+      var formMessage = document.getElementById('formMessage');
+
+      var fields = [
+        { id: 'name', label: 'Name', type: 'text' },
+        { id: 'email', label: 'Work Email', type: 'email' },
+        { id: 'company', label: 'Company', type: 'text' },
+        { id: 'stage', label: 'Company Stage', type: 'select' },
+        { id: 'investment', label: 'Investment Area', type: 'text' },
+        { id: 'message', label: 'Message', type: 'textarea' }
+      ];
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function validateField(field) {
+        var el = document.getElementById(field.id);
+        var wrapper = el.closest('.form-field');
+        var value = el.value.trim();
+        var errorEl = wrapper.querySelector('.error-msg');
+
+        /* create error msg element if missing */
+        if (!errorEl) {
+          errorEl = document.createElement('div');
+          errorEl.className = 'error-msg';
+          wrapper.appendChild(errorEl);
+        }
+
+        wrapper.classList.remove('has-error');
+
+        if (!value) {
+          errorEl.textContent = field.label + ' is required.';
+          wrapper.classList.add('has-error');
+          return false;
+        }
+
+        if (field.type === 'email' && !emailRegex.test(value)) {
+          errorEl.textContent = 'Please enter a valid email address.';
+          wrapper.classList.add('has-error');
+          return false;
+        }
+
+        return true;
+      }
+
+      /* live validation on blur */
+      fields.forEach(function (f) {
+        var el = document.getElementById(f.id);
+        el.addEventListener('blur', function () {
+          validateField(f);
+        });
+        /* clear error while typing */
+        el.addEventListener('input', function () {
+          var wrapper = el.closest('.form-field');
+          if (wrapper.classList.contains('has-error')) {
+            validateField(f);
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var allValid = true;
+
+        fields.forEach(function (f) {
+          if (!validateField(f)) {
+            allValid = false;
+          }
+        });
+
+        if (!allValid) {
+          /* scroll to first error */
+          var firstError = form.querySelector('.has-error');
+          if (firstError) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          return;
+        }
+
+        /* show success messag
+
+        /* redirect to 404 after short delay */
+        
+          window.location.href = '404.html';
+          fields.forEach(function (f) {
+            var el = document.getElementById(f.id);
+            el.value = '';
+          });
+        
+      });
+    })();
+    </script>
+
+</body>
+</html>
