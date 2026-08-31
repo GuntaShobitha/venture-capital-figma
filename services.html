@@ -16,9 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-  <body>
-    <header class="nav-wrap">
-      <nav class="nav">
+  <body>     <header class="nav-wrap">
+        <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+       <nav class="nav">
         <a class="logo" href="./index.html"
           ><img
             src="./assets/logo-dark.webp"
@@ -35,7 +35,8 @@
           <li><a href="./contact.html">Contact</a></li>
         </ul>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-          <i class="fa-solid fa-bars"></i>
+          <span class="hamburger-open"><i class="fa-solid fa-bars"></i></span>
+          <span class="hamburger-close"><i class="fa-solid fa-xmark"></i></span>
         </button>
         <div class="nav-actions">
           <a class="btn btn-ghost" href="./login.html">Login</a
@@ -343,20 +344,44 @@
       </div>
     </footer>
 
+    <div class="mobile-overlay" id="mobileOverlay"></div>
     <script>
-      document
-        .getElementById("hamburgerBtn")
-        .addEventListener("click", function () {
-          var links = document.querySelector(".nav-links");
-          var actions = document.querySelector(".nav-actions");
-          links.classList.toggle("show");
-          if (links.classList.contains("show")) {
-            actions.style.top = links.offsetHeight + "px";
-            actions.classList.add("show");
-          } else {
-            actions.classList.remove("show");
-          }
+      (function() {
+        var btn = document.getElementById("hamburgerBtn");
+        var links = document.querySelector(".nav-links");
+        var actions = document.querySelector(".nav-actions");
+        var overlay = document.getElementById("mobileOverlay");
+        var closeBtn = document.getElementById("mobileCloseBtn");
+        var scrollPos = 0;
+
+        function openMenu() {
+          scrollPos = window.scrollY;
+          document.body.style.top = "-" + scrollPos + "px";
+          links.classList.add("show");
+          actions.classList.add("show");
+          overlay.classList.add("show");
+          btn.classList.add("is-open");
+          document.body.classList.add("menu-open");
+        }
+
+        function closeMenu() {
+          links.classList.remove("show");
+          actions.classList.remove("show");
+          overlay.classList.remove("show");
+          btn.classList.remove("is-open");
+          document.body.classList.remove("menu-open");
+          document.body.style.top = "";
+          window.scrollTo(0, scrollPos);
+        }
+
+        btn.addEventListener("click", function() {
+          var isOpen = links.classList.contains("show");
+          if (isOpen) { closeMenu(); } else { openMenu(); }
         });
+
+        if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+        overlay.addEventListener("click", closeMenu);
+      })();
     </script>
 
     <script>
