@@ -10,7 +10,7 @@ function initDashboard(role) {
   const userData = JSON.parse(sessionStorage.getItem('stackly_user'));
 
   if (!userData || userData.role !== role) {
-    window.location.href = '/login.html';
+    window.location.href = './login.html';
     return null;
   }
 
