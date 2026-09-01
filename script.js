@@ -1,3 +1,93 @@
+// // Reveal on scroll
+// const revealTargets = document.querySelectorAll(
+//   "section h2, .card, .pf, .story, .insight, .feature, .stat, .hero-copy, .hero-visual, .orbit-system, .philosophy-scroll"
+// );
+// revealTargets.forEach((el) => el.classList.add("reveal"));
+
+// const io = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("is-visible");
+//         io.unobserve(entry.target);
+//       }
+//     });
+//   },
+//   { threshold: 0.15 }
+// );
+// revealTargets.forEach((el) => io.observe(el));
+
+// // Animated stat counters
+// const statNumbers = document.querySelectorAll(".stat strong[data-count]");
+// const countIO = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (!entry.isIntersecting) return;
+//       const el = entry.target;
+//       countIO.unobserve(el);
+//       const target = parseFloat(el.dataset.count);
+//       const prefix = el.dataset.prefix || "";
+//       const suffix = el.dataset.suffix || "";
+//       const decimals = String(target).includes(".") ? 1 : 0;
+//       const start = performance.now();
+//       const duration = 1200;
+//       const tick = (now) => {
+//         const p = Math.min((now - start) / duration, 1);
+//         const eased = 1 - Math.pow(1 - p, 3);
+//         el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
+//         if (p < 1) requestAnimationFrame(tick);
+//       };
+//       requestAnimationFrame(tick);
+//     });
+//   },
+//   { threshold: 0.4 }
+// );
+// statNumbers.forEach((el) => countIO.observe(el));
+
+// // Insight filters (visual state only)
+// document.querySelectorAll(".filter").forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     document.querySelectorAll(".filter").forEach((b) => b.classList.remove("is-active"));
+//     btn.classList.add("is-active");
+//   });
+// });
+
+// // Sticky nav shading
+// const navWrap = document.querySelector(".nav-wrap");
+// window.addEventListener("scroll", () => {
+//   navWrap.classList.toggle("is-scrolled", window.scrollY > 24);
+// });
+
+// /* =========================================================
+//    PHILOSOPHY ITEMS — Scroll reveal
+// ========================================================= */
+
+// const phiItems = document.querySelectorAll(".philosophy-item");
+// const phiIO = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("is-visible");
+//       } else {
+//         entry.target.classList.remove("is-visible");
+//       }
+//     });
+//   },
+//   { threshold: 0.4 }
+// );
+// phiItems.forEach((item) => phiIO.observe(item));
+
+
+/* =========================================================
+   PHILOSOPHY — SCROLL CONTROLLED SLIDES
+========================================================= */
+/* =========================================================
+   PHILOSOPHY — ONE SLIDE PER SCROLL SECTION
+========================================================= */
+/* =========================================================
+   STACKLY PHILOSOPHY — 5 PINNED SLIDES
+========================================================= */
+
 // Reveal on scroll
 const revealTargets = document.querySelectorAll(
   "section h2, .card, .pf, .story, .insight, .feature, .stat, .hero-copy, .hero-visual, .orbit-system, .philosophy-scroll"
@@ -76,6 +166,8 @@ const phiIO = new IntersectionObserver(
   { threshold: 0.4 }
 );
 phiItems.forEach((item) => phiIO.observe(item));
+
+
 
 
 
