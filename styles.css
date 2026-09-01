@@ -49,6 +49,13 @@ radial-gradient(209.27% 78.79% at 85% 72%, rgba(255, 238, 170, 0.1) 0%, rgba(255
   min-height: 100vh;
 }
 
+
+.mobile-nav-logo {
+  z-index: 50;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
 /* ─────────── UTILITY ─────────── */
 
 .wrap { width: min(1160px, 92vw); margin: 0 auto; }
@@ -1892,7 +1899,7 @@ h1.title { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 4
 .dash-tab { display: none; }
 .dash-tab.active { display: block; }
 
-.dash-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
+.dash-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; position: sticky; top: 0; z-index: 10; background: var(--bg); padding: 10px 10px 12px 20px; border-bottom: 1px solid rgba(255,236,186,0.08); }
 .dash-header h1 { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--text); }
 .dash-header .welcome-text { font-size: 13px; color: var(--muted); margin-top: 4px; }
 .dash-header-actions { display: flex; gap: 10px; }
@@ -2163,12 +2170,15 @@ body.menu-open { overflow: hidden; }
 
 @media (min-width: 1024px) {
   .mobile-close-btn { display: none !important; }
+  .mobile-nav-logo { display: none !important; }
 }
 
 @media (max-width: 768px) {
   /* Hamburger */
   .hamburger-btn { display: block; }
-
+.table-wrap {
+  width: 92vw;
+}
   /* Nav dropdown — full-screen overlay */
   .nav-links {
     display: none;
