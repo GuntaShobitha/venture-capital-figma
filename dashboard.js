@@ -45,7 +45,7 @@ function initDashboard(role) {
   if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
       sessionStorage.removeItem('stackly_user');
-      window.location.href = '/login.html';
+      window.location.href = './login.html';
     });
   }
 

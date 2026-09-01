@@ -146,7 +146,7 @@ radial-gradient(209.27% 78.79% at 85% 72%, rgba(255, 238, 170, 0.1) 0%, rgba(255
   font-family: var(--serif);
   font-size: clamp(80px, 12vw, 160px);
   font-weight: 700;
-  color: rgba(215, 183, 91, 0.06);
+  color: rgba(215 183 91 / 38%);
   line-height: 1;
   pointer-events: none;
   user-select: none;
@@ -496,7 +496,7 @@ radial-gradient(209.27% 78.79% at 85% 72%, rgba(255, 238, 170, 0.1) 0%, rgba(255
    HERO (Index)
    ═══════════════════════════════════════════════════════ */
 
-.hero { position: relative; padding: 70px 0 100px; display: flex; padding-left: 20px; justify-content: flex-start; flex-direction: column; gap: 40px; }
+.hero { position: relative; padding: 70px 0 100px; display: flex; padding-left: 20px; justify-content: center; align-items: center; flex-direction: column; gap: 40px; }
 .hero .hero-inner { margin: 0 auto; }
 .hero-inner {
   width: min(1160px, 92vw); margin: 0 auto;
@@ -1055,7 +1055,7 @@ radial-gradient(209.27% 78.79% at 85% 72%, rgba(255, 238, 170, 0.1) 0%, rgba(255
   background: rgba(11, 9, 4, 0.5);
 }
 .footer-grid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 24px; }
-.footer-grid ul { margin-top: 12px; display: grid; gap: 8px; font-size: 13px; color: var(--muted); }
+.footer-grid ul { margin-top: 12px; display: grid; gap: 8px; font-size: 13px; padding: 0px; color: var(--muted); }
 .footer-grid a:hover { color: var(--gold); }
 
 .footer-bottom {
@@ -1844,7 +1844,7 @@ h1.title { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 4
 .related-card:hover h4 { color: var(--gold-bright); }
 
 /* CTA Band */
-.cta-band { max-width: 1160px; margin: 130px auto 0; padding: 0 40px; text-align: center; }
+.cta-band { max-width: 1160px; margin: 130px auto 0; padding: 0 40px 20px; padding-bottom: 20px !important; text-align: center; }
 .cta-band .repeat-title { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 3.5vw, 42px); color: var(--text); max-width: 760px; margin: 0 auto 60px; line-height: 1.25; opacity: 0.9; }
 .cta-band .sub-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
 .cta-band h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 3vw, 38px); color: var(--text); margin-bottom: 34px; }
