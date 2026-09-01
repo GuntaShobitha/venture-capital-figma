@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // If already logged in, redirect
   const existing = JSON.parse(sessionStorage.getItem('stackly_user'));
   if (existing) {
-    window.location.href = existing.role === 'admin' ? '/admin-dashboard.html' : '/user-dashboard.html';
+    window.location.href = existing.role === 'admin' ? './admin-dashboard.html' : './user-dashboard.html';
     return;
   }
 
