@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" fill="none">
+  <defs>
+    <linearGradient id="orbit1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2e2e"/>
+      <stop offset="100%" stop-color="#0d1f1f"/>
+    </linearGradient>
+    <radialGradient id="orbit2" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#orbit1)"/>
+  <rect width="200" height="120" fill="url(#orbit2)"/>
+  <!-- Earth-like sphere -->
+  <circle cx="100" cy="60" r="30" stroke="#06b6d4" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <ellipse cx="100" cy="60" rx="15" ry="30" stroke="#06b6d4" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <ellipse cx="100" cy="60" rx="30" ry="10" stroke="#06b6d4" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <!-- Leaf icon -->
+  <path d="M95 45 Q110 40 115 55 Q110 65 95 60 Z" fill="#22d3ee" opacity="0.25" stroke="#22d3ee" stroke-width="0.8"/>
+  <path d="M95 52 Q105 50 110 57" stroke="#22d3ee" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <!-- Orbit rings -->
+  <ellipse cx="100" cy="60" rx="50" ry="18" stroke="#06b6d4" stroke-width="0.6" fill="none" opacity="0.15" transform="rotate(-15 100 60)"/>
+  <ellipse cx="100" cy="60" rx="60" ry="22" stroke="#06b6d4" stroke-width="0.5" fill="none" opacity="0.1" transform="rotate(10 100 60)"/>
+  <text x="100" y="110" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#22d3ee" opacity="0.3" letter-spacing="2">CLIMATE</text>
+</svg>

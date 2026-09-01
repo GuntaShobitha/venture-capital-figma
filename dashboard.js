@@ -56,6 +56,15 @@ function initDashboard(role) {
     });
   });
 
+  // Sidebar logo → always go to overview
+  const logoLink = document.querySelector('.sidebar-logo a');
+  if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchTab('overview');
+    });
+  }
+
   // Tab navigation
   initTabs();
 

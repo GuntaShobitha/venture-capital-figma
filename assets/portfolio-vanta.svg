@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" fill="none">
+  <defs>
+    <linearGradient id="vanta1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2e1a2e"/>
+      <stop offset="100%" stop-color="#1f0d1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#vanta1)"/>
+  <!-- Hexagonal grid pattern -->
+  <polygon points="60,30 75,22 90,30 90,46 75,54 60,46" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <polygon points="90,30 105,22 120,30 120,46 105,54 90,46" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <polygon points="75,46 90,38 105,46 105,62 90,70 75,62" stroke="#d946ef" stroke-width="0.8" fill="rgba(217,70,239,0.06)"/>
+  <polygon points="60,62 75,54 90,62 90,78 75,86 60,78" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <polygon points="90,62 105,54 120,62 120,78 105,86 90,78" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <polygon points="105,46 120,38 135,46 135,62 120,70 105,62" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <polygon points="75,78 90,70 105,78 105,94 90,102 75,94" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <polygon points="105,78 120,70 135,78 135,94 120,102 105,94" stroke="#d946ef" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <!-- Center glow -->
+  <circle cx="90" cy="54" r="8" fill="#d946ef" opacity="0.15"/>
+  <circle cx="90" cy="54" r="3" fill="#f0abfc" opacity="0.6"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#d946ef" opacity="0.3" letter-spacing="2">ENTERPRISE</text>
+</svg>

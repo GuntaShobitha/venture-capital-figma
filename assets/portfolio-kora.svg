@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" fill="none">
+  <defs>
+    <linearGradient id="kora1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2e1a"/>
+      <stop offset="100%" stop-color="#0d1f0d"/>
+    </linearGradient>
+    <linearGradient id="kora2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#kora1)"/>
+  <!-- Circuit board lines -->
+  <path d="M20 60 H60 V30 H100 V60 H140 V90 H180" stroke="#22c55e" stroke-width="1" opacity="0.3" fill="none"/>
+  <path d="M20 40 H40 V80 H80" stroke="#22c55e" stroke-width="0.8" opacity="0.2" fill="none"/>
+  <path d="M120 20 V50 H160 V80" stroke="#22c55e" stroke-width="0.8" opacity="0.2" fill="none"/>
+  <!-- Nodes -->
+  <circle cx="60" cy="30" r="3" fill="#4ade80" opacity="0.6"/>
+  <circle cx="100" cy="60" r="3" fill="#4ade80" opacity="0.6"/>
+  <circle cx="140" cy="90" r="3" fill="#4ade80" opacity="0.6"/>
+  <circle cx="40" cy="80" r="2.5" fill="#4ade80" opacity="0.4"/>
+  <circle cx="160" cy="80" r="2.5" fill="#4ade80" opacity="0.4"/>
+  <!-- Central currency symbol -->
+  <circle cx="100" cy="60" r="25" stroke="#22c55e" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <text x="100" y="66" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#4ade80" opacity="0.5">₿</text>
+  <text x="100" y="110" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#4ade80" opacity="0.3" letter-spacing="2">CROSS-BORDER</text>
+</svg>
