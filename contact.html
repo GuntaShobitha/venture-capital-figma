@@ -478,35 +478,19 @@ Salem, Tamil Nadu 636008
       var actions = document.querySelector('.nav-actions');
       var overlay = document.getElementById('mobileOverlay');
       var closeBtn = document.getElementById('mobileCloseBtn');
-      var scrollPos = 0;
 
-      function openMenu() {
-        scrollPos = window.scrollY;
-        document.body.style.top = '-' + scrollPos + 'px';
-        links.classList.add('show');
-        actions.classList.add('show');
-        overlay.classList.add('show');
-        btn.classList.add('is-open');
-        document.body.classList.add('menu-open');
+      function toggleMenu(open) {
+        var isOpen = open !== undefined ? open : !links.classList.contains('show');
+        links.classList.toggle('show', isOpen);
+        actions.classList.toggle('show', isOpen);
+        overlay.classList.toggle('show', isOpen);
+        btn.classList.toggle('is-open', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
       }
 
-      function closeMenu() {
-        links.classList.remove('show');
-        actions.classList.remove('show');
-        overlay.classList.remove('show');
-        btn.classList.remove('is-open');
-        document.body.classList.remove('menu-open');
-        document.body.style.top = '';
-        window.scrollTo(0, scrollPos);
-      }
-
-      btn.addEventListener('click', function() {
-        var isOpen = links.classList.contains('show');
-        if (isOpen) { closeMenu(); } else { openMenu(); }
-      });
-
-      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
+      btn.addEventListener('click', function() { toggleMenu(); });
+      if (closeBtn) closeBtn.addEventListener('click', function() { toggleMenu(false); });
+      overlay.addEventListener('click', function() { toggleMenu(false); });
     })();
 
     /* ===== Contact Form Validation ===== */

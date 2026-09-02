@@ -848,6 +848,10 @@ if (regConfirmPasswordInput) {
       mobileCloseBtn.style.display = "";
     }
 
+    // Reset overlay
+    var overlay = document.getElementById("mobileOverlay");
+    if (overlay) overlay.classList.remove("show");
+
     // Force browser to recalculate layout
     document.documentElement.style.removeProperty("overflow-x");
 
